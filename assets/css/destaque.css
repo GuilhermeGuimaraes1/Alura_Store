@@ -1,0 +1,72 @@
+.caixa {
+  align-items: flex-end; /*Alinhar os item na parte de baixo*/
+  display: flex;
+  justify-content: center;
+}
+
+.destaques {
+  /*A grid vai ter 4 colunas e 3 linhas*/
+  display: grid;
+  gap: 0.2rem; /*Espaçamento entre as grid*/
+  grid-template-columns: 25% 25% 25% 25%; /*Para dividir as 4 colunas = 100%*/
+  grid-template-rows: 33.33% 33.33% 33.33%; /*E a divisão para as 3 linhas = 99,99%*/
+  height: calc(
+    100vh - 50px
+  ); /*Definição da altura (tamanho total do brower) - cabecalho*/
+}
+
+.destaques__principal {
+  background: url("../img/fortnite.jpg") center / cover no-repeat;
+  grid-row: 1 / 3;
+}
+
+.destaques__titulo {
+  background: rgba(0, 0, 0, 0.5);
+  color: #fdfdfd;
+  padding: 0.6rem;
+  text-align: center;
+  width: 100%;
+}
+
+.destaques__secundario:nth-child(2) {
+  /*child(2) e porque trata do segundo filho da classe mãe (principal)*/
+  background: url("../img/pubg.jpg") center / cover no-repeat;
+}
+
+.destaques__secundario:nth-child(3) {
+  background: url("../img/slack.png") center / cover no-repeat;
+}
+
+.destaques__secundario:nth-child(4) {
+  background: url("../img/whatsapp.png") center / cover no-repeat;
+}
+
+.destaques__secundario:nth-child(5) {
+  background: url("../img/cs-go.jpg") center / cover no-repeat;
+}
+
+.destaques__categorias {
+  grid-column: 1 / 3;
+  grid-row: 3 / 4;
+}
+
+.destaques__categorias___lista {
+  display: flex;
+  flex-wrap: wrap;
+  height: 100%;
+  justify-content: space-between;
+}
+
+.destaques__categorias___item {
+  align-items: center;
+  background: #fdfdfd;
+  border-left: 5px solid transparent;
+  color: #333333;
+  display: flex;
+  padding: 1rem;
+  width: 50%;
+}
+
+.destaques__categorias___link {
+  color: inherit; /*Arda a cor do pai*/
+}
